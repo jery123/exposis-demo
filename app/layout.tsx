@@ -30,7 +30,7 @@ export default function RootLayout({
         <header className="site-header">
           <div className="header-inner">
             <Link aria-label="EXPOSIS, accueil" className="brand" href="/">
-              <Image src="/images/exposis-logo-orange.jpeg" alt="EXPOSIS" width={132} height={79} priority />
+              <Image src="/images/exposis-logo-orange.png" alt="EXPOSIS" width={132} height={79} priority />
             </Link>
             <MobileNavigation />
             <div className="header-actions">
@@ -45,7 +45,7 @@ export default function RootLayout({
         <footer className="site-footer">
           <div className="footer-main">
             <div className="footer-brand">
-              <Image src="/images/exposis-logo-white.jpeg" alt="EXPOSIS" width={118} height={67} />
+              <Image src="/images/exposis-logo-white.png" alt="EXPOSIS" width={118} height={67} />
               <p>Un laboratoire vivant pour apprendre, explorer et bâtir des solutions utiles.</p>
             </div>
             <div>
