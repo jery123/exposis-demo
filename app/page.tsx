@@ -21,7 +21,7 @@ const principles = [
 ];
 
 export default async function HomePage() {
-  const { projects, available } = await getProjects();
+  const { projects, available, demo } = await getProjects();
 
   return (
     <>
@@ -129,16 +129,23 @@ export default async function HomePage() {
         {!available ? (
           <p className="service-note">Le catalogue est momentanément indisponible. Réessayez dans quelques instants.</p>
         ) : projects?.length ? (
-          <div className="project-preview-grid">
-            {projects.slice(0, 2).map((project, index) => (
-              <Link className={`project-preview project-preview-${index + 1}`} href={`/projets/${project.slug}`} key={project.slug}>
-                <span className="preview-index">0{index + 1} / {project.pole}</span>
-                <span className="preview-title">{project.title}</span>
-                <span className="preview-summary">{project.summary}</span>
-                <span className="preview-arrow" aria-hidden="true">↗</span>
-              </Link>
-            ))}
-          </div>
+          <>
+            {demo && (
+              <p className="demo-projects-note" role="status">
+                Mode démonstration : ces exemples statiques s’affichent lorsque le catalogue en ligne est indisponible.
+              </p>
+            )}
+            <div className="project-preview-grid">
+              {projects.slice(0, 2).map((project, index) => (
+                <Link className={`project-preview project-preview-${index + 1}`} href={`/projets/${project.slug}`} key={project.slug}>
+                  <span className="preview-index">0{index + 1} / {project.pole}</span>
+                  <span className="preview-title">{project.title}</span>
+                  <span className="preview-summary">{project.summary}</span>
+                  <span className="preview-arrow" aria-hidden="true">↗</span>
+                </Link>
+              ))}
+            </div>
+          </>
         ) : (
           <div className="empty-projects">
             <div className="empty-mark"><InfinityMark /></div>

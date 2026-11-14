@@ -22,6 +22,10 @@ notifications.
 Projects are read through Laravel's public API. New visitor submissions are
 posted to Laravel and stay in the existing private admin review queue. Member
 projects continue to require admin publication before they appear publicly.
+If the public project API cannot be reached or returns a server error, the
+Next.js site shows a small static demo catalogue so the Vercel deployment can
+still be previewed. The site labels these examples as demonstration content;
+an empty API response and missing project slugs keep their normal behavior.
 
 ## Run locally
 

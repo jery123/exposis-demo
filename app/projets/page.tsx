@@ -17,7 +17,7 @@ export default async function ProjectsPage({
   const { pole, q } = await searchParams;
   const selectedPole = researchAreas.find((area) => area === pole);
   const search = q?.trim().slice(0, 100) ?? "";
-  const { projects, available } = await getProjects(selectedPole, search);
+  const { projects, available, demo } = await getProjects(selectedPole, search);
 
   return (
     <>
@@ -53,6 +53,11 @@ export default async function ProjectsPage({
             Vous êtes membre ? Présentez un projet <span aria-hidden="true">↗</span>
           </Link>
         </div>
+        {demo && (
+          <p className="demo-projects-note" role="status">
+            Mode démonstration : ces exemples statiques s’affichent lorsque le catalogue en ligne est indisponible.
+          </p>
+        )}
         {!available ? (
           <div className="catalog-message" role="status">
             <h2>Le catalogue est momentanément indisponible.</h2>

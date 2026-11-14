@@ -22,13 +22,18 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const { project, available } = await getProject(slug);
+  const { project, available, demo } = await getProject(slug);
 
   if (available && !project) notFound();
 
   return (
     <article className="project-detail section-wrap">
       <Link className="back-link" href="/projets"><span aria-hidden="true">←</span> Retour au catalogue</Link>
+      {demo && (
+        <p className="demo-projects-note demo-project-detail-note" role="status">
+          Mode démonstration : ce projet statique s’affiche lorsque le catalogue en ligne est indisponible.
+        </p>
+      )}
       {!available ? (
         <div className="catalog-message" role="status">
           <h1>Le projet ne peut pas être chargé pour le moment.</h1>
