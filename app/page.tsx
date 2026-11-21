@@ -59,7 +59,7 @@ export default async function HomePage() {
             <div className="orbit-note note-three"><span>03</span> Prototyper</div>
             <div className="orbit-note note-four"><span>04</span> Partager</div>
             <div className="art-spark spark-one"><InfinityMark /></div>
-            <div className="art-spark spark-two">+</div>
+            {/* <div className="art-spark spark-two">+</div> */}
           </div>
         </div>
         <div className="hero-meta">

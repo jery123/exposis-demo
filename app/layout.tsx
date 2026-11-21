@@ -59,7 +59,7 @@ export default function RootLayout({
               <Link href="/communaute/projets/nouveau">Proposer un projet membre</Link>
               <Link href="/soumettre">Soumettre une idée</Link>
               <Link href="mailto:contact-lab@exposis.net">Nous contacter</Link>
-            </div>
+              </div>
           </div>
           <div className="footer-bottom">
             <span>© {new Date().getFullYear()} EXPOSIS · Côte d’Ivoire</span>
